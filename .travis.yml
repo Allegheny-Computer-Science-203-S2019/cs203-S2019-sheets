@@ -1,73 +1,16 @@
-# install latex through R
-language: r
-cache: packages
-
-# install extra latex packages
 before_install:
-  - tlmgr install marginnote
-  - tlmgr install listings
-  - tlmgr install fancyhdr
-  - tlmgr install geometry
-  - tlmgr install titlesec
-  - tlmgr install fontawesome
-  - tlmgr install latexmk
-
-# create the _build directory
-# compile the LaTeX files and save the PDF in _build
+- sudo apt-get -qq update && sudo apt-get install -y --no-install-recommends latexmk
+  texlive-fonts-extra texlive-fonts-recommended texlive-latex-base texlive-latex-extra
+  texlive-latex-recommended
 script:
 - mkdir _build
-- latexmk -xelatex -pdf -outdir=_build lab01/cs100F2018_lab01.tex
-- latexmk -xelatex -pdf -outdir=_build lab02/cs100F2018_lab02.tex
-- latexmk -xelatex -pdf -outdir=_build lab03/cs100F2018_lab03.tex
-- latexmk -xelatex -pdf -outdir=_build lab04/cs100F2018_lab04.tex
-- latexmk -xelatex -pdf -outdir=_build lab05/cs100F2018_lab05.tex
-- latexmk -xelatex -pdf -outdir=_build lab06/cs100F2018_lab06.tex
-- latexmk -xelatex -pdf -outdir=_build lab07/cs100F2018_lab07.tex
-- latexmk -xelatex -pdf -outdir=_build lab08/cs100F2018_lab08.tex
-- latexmk -xelatex -pdf -outdir=_build lab09/cs100F2018_lab09.tex
-- latexmk -xelatex -pdf -outdir=_build lab10/cs100F2018_lab10.tex
-- latexmk -xelatex -pdf -outdir=_build practical01/cs100F2018_practical01.tex
-- latexmk -xelatex -pdf -outdir=_build practical02/cs100F2018_practical02.tex
-- latexmk -xelatex -pdf -outdir=_build practical03/cs100F2018_practical03.tex
-- latexmk -xelatex -pdf -outdir=_build practical04/cs100F2018_practical04.tex
-- latexmk -xelatex -pdf -outdir=_build practical05/cs100F2018_practical05.tex
-- latexmk -xelatex -pdf -outdir=_build practical06/cs100F2018_practical06.tex
-- latexmk -xelatex -pdf -outdir=_build practical07/cs100F2018_practical07.tex
-- latexmk -xelatex -pdf -outdir=_build practical08/cs100F2018_practical08.tex
-- latexmk -pdf -outdir=_build quiz01/cs100F2018_studyguide_quiz01.tex
-- latexmk -pdf -outdir=_build quiz02/cs100F2018_studyguide_quiz02.tex
-- latexmk -pdf -outdir=_build exam01/cs100F2018_studyguide_exam01.tex
-- latexmk -pdf -outdir=_build exam02/cs100F2018_studyguide_exam02.tex
-
-# securely deploy the PDFs to the specified tag on GitHub
-# GitHub's web site provides "releases" as a link near "commits"
+- latexmk -pdf -outdir=_build practical01/cs203S2019_practical01.tex
 deploy:
   provider: releases
   api_key:
-    secure: utZHK+BVk6fhK2mwGnFInPpwqb8U3zpreAqbJykCBT7hc3w8MrWN80rQTHHymOweE17PE2zCYaqo3n44qE8V13IDJoZIi1VxXR0/iDtY0ufbGHk3niO0B+hbqCWXjRvkXU8ZqjYqTzyWtD/x/lLOMMTFowgfga5VSKKzn0AQbCNqMhXakHfb+KRIYNEMGoASODj8oIRbvxQJQbwFw8QZdIsdylk559S7DevO5eMLhXr8x1nfE3LkoQCJeq62rieeCTHGACRpB6R9qGd1CaEwSH8agW26GPvm60YjfvTlxquKLO2gT85OyJ4th0oZK4J+BcnTfVVQudt2mH/boyvQMsPNpN5u0r6Af1n5yR1iYRLXdjZVNwGCeVcZQAJ5UoT7YuYjtsuH8PwgD5057NUJz2sNZ6pqCStBZLpHErL+oivIPKjYAVQF2nzeTMOnOSloQEe5rIACWxFwLGV5C8dPw8CYlaWyHV7rvmt2HN66T6rvGAmtd5JBCCHyKa0BEwBxPcYz9dFueR++03ZMxhE5/3lXBGbjR7tu3Ewrpr61TbLmZbP/2KIdj9dWOY+XJCdbsj2MK0FXKmS1suqWO9WZ4uM5wLpDs0hYBaF6hc0McZUifQUJ1TPyx/egvEGRp2Ys1d3tKBNwpn+zBKmn5BgwQW8hS6Pj341X/J9ENkkqYJw=
+    secure: mrtJ894fXLpCdE9aZ4BU/WCM8P488lVWW6OqX/Qgr1zUA6vHLe2NIS0cawuQDsNnTH8F/4/Xo8FggeNs+uleHEUij0tU7hrWtsbIJyfhDRfKTwq5guRKndWhTRc/mGsKGpz5IG+y881GjVckSZJuE8woUQVLv824nbTlvRqvTqwUNaq6FtdXSbfT+vuF1g4VLlEG+zWZXEeHxirWNmgvd4nuny0XJ9JiDr3zNr6ELwRTF2Z7mgupnTThf+VdLFBJCNce93o0Nt6P9fwTPr7uhYzm0utVP/C45eXPzBGV21yqvCGefSBs5XWxi7p3cQ1LkgJMXrcJn5gOARtvfDSeOe8Ho+o/xvNHO27z6/1mmEnNynYCvjVkmsPi04SXeDgRgSdY3+n3796ZnX4ZL1lROwJLcFJ+xu1bk7GT3V51y5oTDPS+LCxnA7pkeKtnjtgkZXf91/SQQ5rWaWT1JVZDAKvNpA25R2bXDDGFQUcNPirU8idtXhAs+7pAWu11xxyQ98X5HX0Z8VUfvWbVclkhxxuj72EMy5pzLUX0S+kL/nuUZqExbChT1V4fvzZPnalEO4WO58I3zYhw4pyEQKa9pQIy/j8kPhpmtMce/vGhoQh87SadOxyFQELwAanPSTL4p22LIUwkjKKDWNChp9Fo0BBHdCo1mYFpDk/aoD+vNBA=
   file:
-    - _build/cs100F2018_lab01.pdf
-    - _build/cs100F2018_lab02.pdf
-    - _build/cs100F2018_lab03.pdf
-    - _build/cs100F2018_lab04.pdf
-    - _build/cs100F2018_lab05.pdf
-    - _build/cs100F2018_lab06.pdf
-    - _build/cs100F2018_lab07.pdf
-    - _build/cs100F2018_lab08.pdf
-    - _build/cs100F2018_lab09.pdf
-    - _build/cs100F2018_lab10.pdf
-    - _build/cs100F2018_practical01.pdf
-    - _build/cs100F2018_practical02.pdf
-    - _build/cs100F2018_practical03.pdf
-    - _build/cs100F2018_practical04.pdf
-    - _build/cs100F2018_practical05.pdf
-    - _build/cs100F2018_practical06.pdf
-    - _build/cs100F2018_practical07.pdf
-    - _build/cs100F2018_practical08.pdf
-    - _build/cs100F2018_studyguide_quiz01.pdf
-    - _build/cs100F2018_studyguide_quiz02.pdf
-    - _build/cs100F2018_studyguide_exam01.pdf
-    - _build/cs100F2018_studyguide_exam02.pdf
+    - _build/cs203S2019_practical01.pdf
   skip_cleanup: true
   on:
     tags: true
