@@ -4,22 +4,22 @@
 
 % Edit these commands for each assignment
 
-\newcommand{\assignmentduedate}{September 17}
-\newcommand{\assignmentassignedate}{September 14}
+\newcommand{\assignmentduedate}{January 23}
+\newcommand{\assignmentassignedate}{January 18}
 \newcommand{\assignmentnumber}{One}
 
-\newcommand{\labyear}{2018}
-\newcommand{\labdueday}{Monday}
+\newcommand{\labyear}{2019}
+\newcommand{\labdueday}{Wednesday}
 \newcommand{\labassignday}{Friday}
-\newcommand{\labtime}{9:00 am}
+\newcommand{\labtime}{1:30 pm}
 
 \newcommand{\assigneddate}{Assigned: \labassignday, \assignmentassignedate, \labyear{} at \labtime{}}
 \newcommand{\duedate}{Due: \labdueday, \assignmentduedate, \labyear{} at \labtime{}}
 
 % Edit these commands to give the name to the main program
 
-\newcommand{\mainprogram}{\lstinline{DisplayArtwork}}
-\newcommand{\mainprogramsource}{\lstinline{src/main/java/practicalone/DisplayArtwork.java}}
+\newcommand{\mainprogram}{\lstinline{compute_tf_monolith.py}}
+\newcommand{\mainprogramsource}{\lstinline{src/termfrequency/compute_tf_monolith.py}}
 
 % Edit this commands to describe key deliverables
 
@@ -47,8 +47,7 @@
 \newcommand{\gitpush}{\command{git push}}
 \newcommand{\gitpull}{\command{git pull}}
 
-\newcommand{\gitcommitmainprogram}{\command{git commit src/main/java/practicalone/DisplayArtwork.java -m "Your
-descriptive commit message"}}
+\newcommand{\gitcommitmainprogram}{\command{git commit src/termfrequency/compute_tf_monolith.py -m "Descriptive commit message"}}
 
 % Use this when displaying a new command
 
@@ -78,7 +77,7 @@ descriptive commit message"}}
 \pagestyle{fancy}
 
 \fancyhf{}
-\rhead{Computer Science 101}
+\rhead{Computer Science 203}
 \lhead{Practical Assignment \assignmentnumber{}}
 \rfoot{Page \thepage}
 \lfoot{\duedate}
@@ -91,8 +90,8 @@ descriptive commit message"}}
   \begin{center}
     \begin{center}
       \bf
-      CMPSC 101\\Introduction to Computer Science I\\
-      Fall 2018\\
+      CMPSC 203\\Introduction to Computer Science I\\
+      Spring 2019\\
       \medskip
     \end{center}
     \bf
@@ -110,13 +109,13 @@ descriptive commit message"}}
 
 To practice using GitHub to access the files for a practical assignment.
 Additionally, to practice using the Ubuntu operating system and software
-development programs such as a ``terminal window'' and the ``GVim text editor''.
-You will also continue to practice using Slack to support communication with the
+development programs such as a ``terminal window'' and a ``text editor''. You
+will also continue to practice using Slack to support communication with the
 teaching assistants and the course instructor. Next, you will learn how to
-implement and run a Java program, also discovering how to use the Gradle build
-tool and the course's automated grading tool to assess your progress towards
+implement and run a Python program, also discovering how to use the Pipenv tool
+and the course's automated grading tool to assess your progress towards
 correctly completing the project. Finally, you will explore how to perform
-character output and to use escaped characters.
+automated testing with programs implemented in the monolithic style.
 
 \section*{Suggestions for Success}
 
@@ -145,7 +144,7 @@ character output and to use escaped characters.
   next to you or talk with a teaching assistant or the course instructor.
 
 \item {\bf Store your files in GitHub}. As in all of your past assignments, you
-  will be responsible for storing all of your files (e.g., Java source code and
+  will be responsible for storing all of your files (e.g., Python source code and
   Markdown-based writing) in a Git repository using GitHub Classroom. Please
   verify that you have saved your source code in your Git repository by using
   \command{git status} to ensure that everything is updated. You can see if
@@ -190,16 +189,21 @@ character output and to use escaped characters.
 \section*{Reading Assignment}
 
 If you have not done so already, please read all of the relevant ``GitHub
-Guides'', available at \url{https://guides.github.com/}, that explain how to
-use many of the features that GitHub provides. In particular, please make sure
-that you have read guides such as ``Mastering Markdown'' and ``Documenting Your
+Guides'', available at \url{https://guides.github.com/}, that explain how to use
+many of the features that GitHub provides. In particular, please make sure that
+you have read guides such as ``Mastering Markdown'' and ``Documenting Your
 Projects on GitHub''; each of them will help you to understand how to use both
-GitHub and GitHub Classroom. To do well on this assignment, you should also
-read Chapters 1 and 2 in the course textbook, paying particularly close
-attention to Sections 1.5 and 2.1. Please see the instructor or one of the
-teaching assistants if you have questions on these reading assignments.
+GitHub and GitHub Classroom. To do well on this assignment, you should also read
+Chapters 1 and 2 in {\em Think Python\/} and the Preface and Chapters 1 through
+2 in the {\em Exercises in Programming Style\/}.
+%
+You are also expected to find and read all of the online resources that
+they need to complete this assignment.
+%
+Please see the course instructor if you have questions on these reading
+assignments.
 
-\section*{Using Escaped Characters to Display Character-Based Artwork}
+\section*{Debugging and Using a Monolithic Python Program}
 
 To access the practical assignment, you should go into the
 \channel{\#announcements} channel in our Slack team and find the announcement
@@ -212,41 +216,45 @@ to access your new GitHub repository for this assignment, please click the green
 assignment has been created here''. If you accepted the assignment and correctly
 followed these steps, you should have created a GitHub repository with a name
 like
-``Allegheny-Computer-Science-101-Fall-2018/computer-science-101-fall-2018-practical-1-gkapfham''.
+``Allegheny-Computer-Science-203-Spring-2019/computer-science-203-spring-2019-practical-1-gkapfham''.
 Unless you provide the instructor with documentation of the extenuating
 circumstances that you are facing, not accepting the assignment means that you
-automatically receive a failing grade for it. Please follow the steps from the
-two previous laboratory assignments for finding your ``home base'' for this
-practical assignment; see the instructor if you are stuck on getting started.
+automatically receive a failing grade for it. Now, remember that your home base
+for this assignment is the directory that contains all of the configuration
+files and the \command{src/} directory. Make sure that you can find finding your
+``home base'' for this practical assignment! Please see the instructor if you
+are stuck on getting started.
 
-Now, study the documentation in the provided source code to understand the type
-of output that your program should produce. Note the constraints on the
-character symbols that should appear in the output and the number of possible
-{\tt println} statements you can use to produce the output. That is, along with
-including the characters ``{\tt @@}'' in your output, your program should use an
-escaped character to create ten lines of output with only nine {\tt println}
-statements. If you are not sure how to create the ten output lines with only
-nine {\tt println} statements, review the textbook to learn more about the
-escaped character that causes the display of a ``newline character''.
+Now, study the documentation in the provided source code and documentation to
+understand the type of output that your program should produce.
+%
+At the outset, you should notice that the provided source code does not contain
+all of the source code from Chapter 3 of the course textbook. You will need to
+add in the appropriate source code and documentation to ensure that the Python
+program passes all of the checks and produces the correct output.
+
 
 \section*{Checking the Correctness of Your Program and Writing}
 
 As in the past assignments, you are provided with an automated tool for checking
 the quality of your source code. Please note that the practical assignments do
 not require you to create technical writing as you do in the laboratory
-assignments. To automatically check your Java source code you can get started
+assignments. To automatically check your Python source code you can get started
 with the use of the GatorGrader tool, typing the command \gatorgraderstart{} in
-your terminal window. If you do have mistakes in your assignment, then you will
-need to review GatorGrader's output, find the mistake, and try to fix it. Also,
-once your program is building correctly, fulfilling at least some of the
+your terminal window.
+%
+Once your program is building correctly, fulfilling at least some of the
 assignment's requirements, you should transfer your files to GitHub using the
 \gitcommit{} and \gitpush{} commands. For example, if you want to signal that
 the \mainprogramsource{} file has been changed and is ready for transfer to
 GitHub you would first type \gitcommitmainprogram{} in your terminal, followed
 by typing \gitpush{} and checking to see that the transfer to GitHub is
-successful. If you notice that transferring your Java source code to GitHub did
-not work correctly, then please try to determine why, asking a teaching
+successful. If you notice that transferring your Python source code to GitHub
+did not work correctly, then please try to determine why, asking a teaching
 assistant or the course instructor for assistance, if necessary.
+
+% If you do have mistakes in your assignment, then you will need to review
+% GatorGrader's output, find the mistake, and try to fix it.
 
 After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
@@ -278,6 +286,9 @@ assignment, you are not required to complete any technical writing.
   \mainprogramsource{} that both meets all of the established requirements and
   produces the desired textual output in your terminal window.
 
+\item Stored in a Markdown file called \reflection{}, a one-paragraph response,
+  each consisting of at least 100 words, for each of the stated questions.
+
 \end{enumerate}
 
 \section*{Evaluation of Your Practical Assignment}
@@ -296,9 +307,9 @@ individual basis. While it is appropriate for students in this class to have
 high-level conversations about the assignment, it is necessary to distinguish
 carefully between the student who discusses the principles underlying a problem
 with others and the student who produces assignments that are identical to, or
-merely variations on, someone else's work. Deliverables (e.g., Java source code)
-that are nearly identical to the work of others will be taken as evidence of
-violating the \mbox{Honor Code}. Please see the course instructor during office
-hours if you have questions about the Honor Code policy.
+merely variations on, someone else's work. Deliverables (e.g., Python source
+code) that are nearly identical to the work of others will be taken as evidence
+of violating the \mbox{Honor Code}. Please see the course instructor during
+office hours if you have questions about the Honor Code policy.
 
 \end{document}
