@@ -9,7 +9,7 @@
 \newcommand{\assignmentnumber}{Two}
 
 \newcommand{\labyear}{2019}
-\newcommand{\labdueday}{Wednesday}
+\newcommand{\labdueday}{Monday}
 \newcommand{\labassignday}{Friday}
 \newcommand{\labtime}{1:30 pm}
 
@@ -47,7 +47,7 @@
 \newcommand{\gitpush}{\command{git push}}
 \newcommand{\gitpull}{\command{git pull}}
 
-\newcommand{\gitcommitmainprogram}{\command{git commit src/termfrequency/compute_tf_monolith.py -m "Descriptive commit message"}}
+\newcommand{\gitcommitmainprogram}{\command{git commit src/termfrequency/compute_tf_cookbook.py -m "Descriptive commit message"}}
 
 % Use this when displaying a new command
 
@@ -109,13 +109,13 @@
 
 To practice using GitHub to access the files for a practical assignment.
 Additionally, to practice using the Ubuntu operating system and software
-development programs such as a ``terminal window'' and a ``text editor''. You
+development programs such as a ``terminal window'' and a ``testing tool''. You
 will also continue to practice using Slack to support communication with the
 teaching assistants and the course instructor. Next, you will learn how to
 implement and run a Python program, also discovering how to use the Pipenv tool
 and the course's automated grading tool to assess your progress towards
 correctly completing the project. Finally, you will explore how to perform
-automated testing with programs implemented in the cookbook style.
+automated testing with Pytest and a program in the cookbook style.
 
 \section*{Suggestions for Success}
 
@@ -189,19 +189,18 @@ automated testing with programs implemented in the cookbook style.
 \section*{Reading Assignment}
 
 If you have not done so already, please read all of the relevant ``GitHub
-Guides'', available at \url{https://guides.github.com/}, that explain how to use
-many of the features that GitHub provides. In particular, please make sure that
-you have read guides such as ``Mastering Markdown'' and ``Documenting Your
+Guides'', available at \url{https://guides.github.com/}, that explain how to
+use many of the features that GitHub provides. In particular, please make sure
+that you have read guides such as ``Mastering Markdown'' and ``Documenting Your
 Projects on GitHub''; each of them will help you to understand how to use both
-GitHub and GitHub Classroom. To do well on this assignment, you should also read
-Chapters 1 and 2 in {\em Think Python\/} and the Preface and Chapters 1 through
-3 in the {\em Exercises in Programming Style\/}.
+GitHub and GitHub Classroom. To do well on this assignment, you should also
+read Chapters 1 through 3 in {\em Think Python\/} and the Preface and Chapters
+1 through 4 in the {\em Exercises in Programming Style\/}.
 %
-You are also expected to find and read all of the online resources that
-you need to complete this assignment.
+You are also expected to find and read all of the online resources that you
+need to complete this assignment.
 %
-Please see the course instructor if you have questions on these reading
-assignments.
+You should also read the first two chapters in the Pytest book.
 
 \section*{Debugging and Testing a Cookbook Python Program}
 
@@ -216,28 +215,33 @@ to access your new GitHub repository for this assignment, please click the green
 assignment has been created here''. If you accepted the assignment and correctly
 followed these steps, you should have created a GitHub repository with a name
 like
-``Allegheny-Computer-Science-203-Spring-2019/computer-science-203-spring-2019-practical-1-gkapfham''.
+``Allegheny-Computer-Science-203-Spring-2019/computer-science-203-spring-2019-practical-2-gkapfham''.
 Unless you provide the instructor with documentation of the extenuating
 circumstances that you are facing, not accepting the assignment means that you
 automatically receive a failing grade for it. Now, remember that your home base
 for this assignment is the directory that contains all of the configuration
-files and the \command{src/} directory. Make sure that you can find your ``home
-base'' for this practical assignment! Please see the instructor if you are stuck
-on getting started.
+files and the \command{termfrequency/} directory. Can you find the program and
+its tests?
 
-Now, study the provided Python source code and the technical documentation to
-understand the type of output that your program should produce.
+% Make sure that you can find your ``home base'' for this practical assignment!
+% Please see the instructor if you are stuck on getting started.
+
+Study the provided source code and the technical documentation to understand the
+type of output that your program should produce.
 %
 At the outset, you should notice that the provided source code does not contain
-all of the source code from Chapter 3 of the book. You will need to add in the
+all of the source code from Chapter 4 of the book. You will need to add in the
 appropriate source code and documentation to ensure that the Python program
-passes all of the checks and produces the correct output. Make sure that you
-fully document all aspects of the Python program! Next, you need to implement
-and explain some approach to automatically testing this cookbook Python
-program. Your approach should be executable at the command-line and always
-ensure that the program produces the expected output for both of the two
-provided input files. Please explain your automated testing strategy in
-\reflection{}.
+passes all of the checks and produces the correct output.
+%
+As you are adding all of the required code, you should also run the Pytest test
+suite that currently contains a single test. Following the strategy of this test
+and the documentation for the functions in the program, please add at least four
+more test cases that establish a confidence in the correctness of the
+cookbook-style program. If you have already installed Pipenv and the project's
+development dependencies, then you can run the test suite by typing
+\command{pipenv run pytest}. How does this testing strategy compare to the last
+one?
 
 \section*{Checking the Correctness of Your Program and Writing}
 
@@ -255,9 +259,6 @@ by typing \gitpush{} and checking to see that the transfer to GitHub is
 successful. If you notice that transferring your Python source code to GitHub
 did not work correctly, then please try to determine why, asking a teaching
 assistant or the course instructor for assistance, if necessary.
-
-% If you do have mistakes in your assignment, then you will need to review
-% GatorGrader's output, find the mistake, and try to fix it.
 
 After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
@@ -290,7 +291,7 @@ assignment, you are not required to complete any technical writing.
   \mainprogramsource{} that both meets all of the established requirements and
   produces the desired output.
 
-\item Stored in a Markdown file called \reflection{}, a four-paragraph response,
+\item Stored in a Markdown file called \reflection{}, a six-paragraph response,
   with each paragraph consisting of at least 100 words, for each of the stated
   prompts.
 
@@ -304,8 +305,6 @@ deadline then you will receive the highest possible grade for the assignment.
 However, you will fail the assignment if you do not complete it correctly, as
 evidenced by a red \naughtmark{} in your commit listing, by the set deadline for
 completing the project.
-
-\section*{Adhering to the Honor Code}
 
 In adherence to the Honor Code, students should complete this assignment on an
 individual basis. While it is appropriate for students in this class to have
