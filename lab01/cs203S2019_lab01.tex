@@ -29,7 +29,7 @@
 
 % Edit this commands to describe key deliverables
 
-\newcommand{\reflection}{\lstinline{writing/reflection.md}}
+\newcommand{\reflection}{\lstinline{report.md}}
 
 % Commands to describe key development tasks
 
@@ -229,12 +229,12 @@ to complete this laboratory assignment.
 Please see the course instructor if you have questions on these reading
 assignments.
 
-\section*{Debugging and Testing a Monolithic Python Program}
+\section*{Creating an Assessment Guide and Code of Conduct}
 
 To access the practical assignment, you should go into the
 \channel{\#announcements} channel in our Slack team and find the announcement
 that provides a link for it. Copy this link and paste it into your web browser.
-Now, you should accept the practical assignment and see that GitHub Classroom
+Now, you should accept the laboratory assignment and see that GitHub Classroom
 created a new GitHub repository for you to access the assignment's starting
 materials and to store the completed version of your assignment. Specifically,
 to access your new GitHub repository for this assignment, please click the green
@@ -245,52 +245,72 @@ like
 ``Allegheny-Computer-Science-203-Spring-2019/computer-science-203-spring-2019-lab-1-gkapfham''.
 Unless you provide the instructor with documentation of the extenuating
 circumstances that you are facing, not accepting the assignment means that you
-automatically receive a failing grade for it.
+will receive a failing grade for it.
 
-\section*{Checking the Correctness of Your Program and Writing}
+Unlike other laboratory and practical assignments, this one asks that you work
+in a entire-class team to complete two written documents stored in a GitHub
+repository. If you look in your new repository, you will find a link to a
+repository that will store the writing for a guide supporting the assessment of
+a student's technical and professional skills.
+one
+\section*{Collaborating With Your Software Development Team}
 
-In addition to writing your own automated testing tool, you can use GatorGrader
-to check other characteristics of your project. To automatically check your
-Python source code you can get started with the use of the GatorGrader tool,
-typing the command \gatorgraderstart{} in your terminal window.
-%
-Once your program is running correctly, fulfilling at least some of the
-assignment's requirements, you should transfer your files to GitHub using the
-\gitcommit{} and \gitpush{} commands. For example, if you want to signal that
-the \mainprogramsource{} file has been changed and is ready for transfer to
-GitHub you would first type \gitcommitmainprogram{} in your terminal, followed
-by typing \gitpush{} and checking to see that the transfer to GitHub is
-successful. If you notice that transferring your Python source code to GitHub
-did not work correctly, then please try to determine why, asking a teaching
-assistant or the course instructor for assistance, if necessary.
+Your team should use the GitHub issue tracker to write out a description of each
+of the key tasks that you need to complete for this project. For now, the focus
+for these issues should be the features that you want your program to have;
+later you can also use the issue tracker to discuss shortcomings of different
+aspects of your system. Attempting to manage risk and estimate the effort
+required for individual team members to resolve these issues, you should now
+assign people to roles and tasks. While it is acceptable for you to have
+in-person discussions with your team members, please remember that all important
+discussions and decisions must be documented in GitHub.
 
-% If you do have mistakes in your assignment, then you will need to review
-% GatorGrader's output, find the mistake, and try to fix it.
+Since each team member is an administrator for your team's GitHub repository,
+everyone can create ``branches'' allocated to, for instance, each of the program
+features that you want to implement or the documentation that you want to write.
+Once a specific branch contains the finished version of its associated
+deliverable, a team member should create a pull request for discussion. If the
+team judges that the pull request has all of the expected characteristics, then
+it should be merged into the ``master'' branch of your repository. If the pull
+request is not accepted, then the team member should improve it until it meets
+every team member's expectations. Your team should continue to use this model,
+called ``GitHub flow'', to support the completion of all deliverables.
+
+For this assignment, you team should also report how well its Python source code
+scores with the \command{pylint3}. Whenever possible, you should resolve the
+issues raised by \command{pylint3} --- for instance, your source code files
+should always be correctly indented and there should always be the needed number
+of blank lines between functions. Finally, you should also check the Markdown
+files in your repository with both \command{mdl} and \command{proselint},
+resolving the identified issues whenever possible.
+
+\section*{Checking the Correctness of Your Technical Writing}
+
+Unlike the practical assignments, this laboratory assignment does not feature
+any checks supported by the GatorGrader tool.
 
 After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
 code to your GitHub repository, Travis CI will initialize a \step{build} of your
-assignment, checking to see if it meets all of the requirements. If both your
-source code and writing meet all of the established requirements, then you will
-see a green \checkmark{} in the listing of commits in GitHub after awhile. If
-your submission does not meet the requirements, a red \naughtmark{} will appear
-instead. The instructor will reduce a student's grade for this assignment if the
-red \naughtmark{} appears on the last commit in GitHub immediately before the
-assignment's due date. Yet, if the green \checkmark{} appears on the last commit
-in your GitHub repository, then you satisfied all of the main checks and you
-will earn full credit. Unless you provide the course instructor with
-documentation of the severe and extenuating circumstances that you are facing,
-no late work will be considered towards your completion grade for this practical
-assignment.
+assignment, checking to see if it meets all of the requirements. 
+
+If both your source code and writing meet all of the established requirements,
+then you will see a green \checkmark{} in the listing of commits in GitHub after
+awhile. If your submission does not meet the requirements, a red \naughtmark{}
+will appear instead. The instructor will reduce a student's grade for this
+assignment if the red \naughtmark{} appears on the last commit in GitHub
+immediately before the assignment's due date. Yet, if the green \checkmark{}
+appears on the last commit in your GitHub repository, then you satisfied all of
+the main checks and you will earn full credit. Unless you provide the course
+instructor with documentation of the severe and extenuating circumstances that
+you are facing, no late work will be considered towards your completion grade
+for this practical assignment.
 
 \section*{Summary of the Required Deliverables}
 
 \noindent Students do not need to submit printed source code or technical
 writing for any assignment in this course. Instead, this assignment invites you
 to submit, using GitHub, the following deliverables.
-
-% Because this is a practical assignment, you are not required to complete any
-% technical writing.
 
 \begin{enumerate}
 
@@ -308,23 +328,6 @@ to submit, using GitHub, the following deliverables.
 
 \section*{Evaluation of Your Laboratory Assignment}
 
-Laboratory assignments are graded on a completion --- or ``checkmark'' --- basis. If
-your GitHub repository has a \checkmark{} for the last commit before the
-deadline then you will receive the highest possible grade for the assignment.
-However, you will fail the assignment if you do not complete it correctly, as
-evidenced by a red \naughtmark{} in your commit listing, by the set deadline for
-completing the project.
 
-\section*{Adhering to the Honor Code}
-
-In adherence to the Honor Code, students should complete this assignment on an
-individual basis. While it is appropriate for students in this class to have
-high-level conversations about the assignment, it is necessary to distinguish
-carefully between the student who discusses the principles underlying a problem
-with others and the student who produces assignments that are identical to, or
-merely variations on, someone else's work. Deliverables (e.g., Python source
-code) that are nearly identical to the work of others will be taken as evidence
-of violating the \mbox{Honor Code}. Please see the course instructor during
-office hours if you have questions about the Honor Code policy.
 
 \end{document}
