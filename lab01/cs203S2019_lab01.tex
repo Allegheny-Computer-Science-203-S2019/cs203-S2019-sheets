@@ -252,65 +252,62 @@ will receive a failing grade for it.
 % Details of what students must complete
 
 Unlike other laboratory and practical assignments, this one asks that you work
-in a entire-class team to complete two written documents that are each stored in
-a separate GitHub repository. If you look in the repository that GitHub
-Classroom created, then you will find the link to a repository that stores the
-starting version of a guide supporting the assessment of a student's technical
-and professional skills. Similarly, you should also find a link to another
-repository that stores the start of a code of conduct for the members of a
-software engineering team. For this laboratory assignment, your task is to
-collaborate with the members of your class to write a full-feature assessment
-guide and code of conduct, using the GitHub flow model to facilitate
-collaboration.
+in a entire-class team to write two documents that are each stored in a separate
+GitHub repository. If you look in the repository that GitHub Classroom created,
+then you will find the link to a repository that stores the starting version of
+a guide supporting the assessment of a student's technical and professional
+skills. Similarly, you should also find the link to another repository that
+stores the start of a code of conduct for the members of a software engineering
+team. For this laboratory assignment, your task is to collaborate with the
+members of your class to write a full-feature assessment guide and code of
+conduct, using the GitHub flow model to facilitate collaboration. Please note
+that, since you do not have direct access to either of the aforementioned
+repositories, you should use repository forks and pull requests to ensure that
+your work is ultimately featured in the repository's master branch.
 
-\section*{Collaborating With Your Software Development Team}
+\section*{Collaborating With Your Software Engineering Team}
 
-Your team should use the GitHub issue tracker to write out a description of each
-of the key tasks that you need to complete for this project. For now, the focus
-for these issues should be the features that you want your program to have;
-later you can also use the issue tracker to discuss shortcomings of different
-aspects of your system. Attempting to manage risk and estimate the effort
-required for individual team members to resolve these issues, you should now
-assign people to roles and tasks. While it is acceptable for you to have
-in-person discussions with your team members, please remember that all important
-discussions and decisions must be documented in GitHub.
+Your team should use GitHub and its features (e.g., issue tracker, pull
+requests, commit log, and code review request) to complete all of the tasks
+referenced in the previous section.
+%
+Aiming to manage risk and estimate the effort required for individual team
+members to complete this project, you should assign people to roles and tasks.
+Remember, while it is acceptable for you to have in-person discussions with your
+team members or to discuss the project through Slack, please remember that all
+important discussions and decisions must be documented in GitHub.
 
-Since each team member is an administrator for your team's GitHub repository,
-everyone can create ``branches'' allocated to, for instance, each of the program
-features that you want to implement or the documentation that you want to write.
+Since multiple approaches may support the effective completion of the required
+documents, this assignment does not dictate team organization or communication
+strategies. The students in the course should instead work with each other, the
+technical leads, and the course instructor to identify team roles and strategies
+for effective organization and communication. With that said, you should plan to
+use either forks or branches of a GitHub repository to organize your work.
+%
 Once a specific branch contains the finished version of its associated
-deliverable, a team member should create a pull request for discussion. If the
-team judges that the pull request has all of the expected characteristics, then
-it should be merged into the ``master'' branch of your repository. If the pull
-request is not accepted, then the team member should improve it until it meets
-every team member's expectations. Your team should continue to use this model,
-called ``GitHub flow'', to support the completion of all deliverables.
+deliverable, a team member should create a pull request for discussion and
+review. If the team leaders, the technical leaders, and the course instruct
+judge that the pull request has all of the expected characteristics, then it
+should be merged into the ``master'' branch of the appropriate repository. If
+the pull request is not accepted, then the team member should improve it until
+it meets every reviewer's expectations. Your team should continue to use this
+model, called ``GitHub flow'', to support the completion of all deliverables.
 
-Finally, you should also check the Markdown files in your repository with both
-\command{mdl} and \command{proselint}, resolving the identified issues whenever
-possible.
+Please remember that Travis CI is configured to check the Markdown files in
+these repositories with both \command{mdl} and \command{proselint}.
+%
+If your writing meets all of the established requirements set by these linting
+tools, then you will see a green \checkmark{} in the listing of commits in
+GitHub after awhile. If your submission does not meet the requirements, a red
+\naughtmark{} will appear instead. The instructor will reduce a student's grade
+for this assignment if the red \naughtmark{} appears on the last commit in
+GitHub immediately before the assignment's due date. Yet, if the green
+\checkmark{} appears on the last commit in your GitHub repository, then you
+satisfied all of the main checks and you will earn full credit.
 
-\section*{Checking the Correctness of Your Technical Writing}
-
-Unlike the practical assignments, this laboratory assignment does not feature
-any checks supported by the GatorGrader tool.
-
-After the course instructor enables \step{continuous integration} with a system
-called Travis CI, when you use the \gitpush{} command to transfer your source
-code to your GitHub repository, Travis CI will initialize a \step{build} of your
-assignment, checking to see if it meets all of the requirements.
-
-If both your source code and writing meet all of the established requirements,
-then you will see a green \checkmark{} in the listing of commits in GitHub after
-awhile. If your submission does not meet the requirements, a red \naughtmark{}
-will appear instead. The instructor will reduce a student's grade for this
-assignment if the red \naughtmark{} appears on the last commit in GitHub
-immediately before the assignment's due date. Yet, if the green \checkmark{}
-appears on the last commit in your GitHub repository, then you satisfied all of
-the main checks and you will earn full credit. Unless you provide the course
-instructor with documentation of the severe and extenuating circumstances that
-you are facing, no late work will be considered towards your completion grade
-for this practical assignment.
+Unless you provide the course instructor with documentation of the severe and
+extenuating circumstances that you are facing, no late work will be considered
+towards your completion grade for this practical assignment.
 
 \section*{Summary of the Required Deliverables}
 
