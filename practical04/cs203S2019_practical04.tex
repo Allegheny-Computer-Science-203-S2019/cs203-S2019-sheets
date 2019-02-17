@@ -123,14 +123,14 @@ To practice using GitHub to access the files for a practical assignment.
 Additionally, to practice using the Ubuntu operating system and software
 development programs such as a ``terminal window'' and a ``testing tool''. You
 will also continue to practice using Slack to support communication with the
-teaching assistants and the course instructor. You will continue to practice to
-implementing and running a Python program and also using the Pipenv tool and the
+teaching assistants and the course instructor. You will carry on with practice
+in implementing and running a Python program and also using Pipenv and the
 course's automated grading tool to assess your progress towards correctly
 completing the project. Along with learning how to use new Pytest plugins, you
-will also start to look for and fix ``red flags'' in your system's design (e.g.,
-``repetition'' and ``vague name''). Finally, you will continue to both document
-deficiencies of the ``cookbook program style'' and to automated its coverage
-testing with Pytest.
+will also start to look for and, if possible, fix ``red flags'' in your
+system's design (e.g., ``repetition'' and ``vague name''). Finally, you will
+continue to both document deficiencies of the ``cookbook program style'' and to
+automated its coverage testing with Pytest.
 
 \section*{Suggestions for Success}
 
@@ -215,15 +215,13 @@ through 4 in the {\em Exercises in Programming Style\/}.
 You should also read the first two chapters in the \pytest, making sure that you
 understand this tool's command-line arguments.
 %
-Please make sure that you carefully review the documentation of the Coverage.py
-package that supports coverage analysis of Python programs.
+Please make sure that you carefully review the listing of ``red flags'' in the
+appendix of \philosophy.
 %
-You are also expected to find and read all of the online resources that you
-need.
+You are also expected to find and read all of the online resources
+that you need to complete this assignment.
 
-% to complete this assignment.
-
-\section*{Coverage-Driven Testing for a Cookbook Python Program}
+\section*{Discovering the Limitations Imposed by the Cookbook Style}
 
 To access the practical assignment, you should go into the
 \channel{\#announcements} channel in our Slack team and find the announcement
@@ -236,7 +234,7 @@ to access your new GitHub repository for this assignment, please click the green
 assignment has been created here''. If you accepted the assignment and correctly
 followed these steps, you should have created a GitHub repository with a name
 like
-``Allegheny-Computer-Science-203-Spring-2019/computer-science-203-spring-2019-practical-3-gkapfham''.
+``Allegheny-Computer-Science-203-Spring-2019/computer-science-203-spring-2019-practical-4-gkapfham''.
 Unless you provide the instructor with documentation of the extenuating
 circumstances that you are facing, not accepting the assignment means that you
 automatically receive a failing grade for it. Now, remember that your home base
@@ -245,25 +243,26 @@ files and the \command{termfrequency/} directory. Can you find the program and
 its tests?
 
 Study the provided source code and the technical documentation to understand the
-type of output that your program should produce.
+type of output that your program produces.
 %
 As you are adding all of the required code, you should also run the Pytest test
 suite that currently contains one test. Following the strategy of this test and
-the documentation for the functions in the program, please add many more tests
-to establish a confidence in the correctness of the cookbook-style program.
+the documentation for the functions in the program, add all of the test cases
+that you previously developed for this program.
 %
 If you have already installed Pipenv and the project's development dependencies,
-you can run the tests by typing \command{pipenv run pytest}. First, you should
-explore the different command-line options for running the test suite, like
-\command{-s}, \command{--lf}, and \command{--ff}.
+you can run the tests by typing \command{pipenv run pytest}.
 %
-Next, you should follow the instructions in the \program{README} file to run the
-test suite while perform ``code coverage analysis'', thereby tracking how the
-tests exercise the program.
+% Next, you should follow the instructions in the \program{README} file to run the
+% test suite while perform ``code coverage analysis'', thereby tracking how the
+% tests exercise the program.
 %
-After studying the coverage report, you should add tests to the suite with the
-aim of incrementally working towards full coverage of the program's statements
-and more confidence in its correctness.
+After that, please try to use Pytest plugins like \program{pytest-clarity} and
+\program{pytest-sugar} and observing how they help you to be a better tester.
+%
+Finally, review the ``red flags'' associated with poor software designs and try
+to take steps to refactor the Python program and tests to avoid those concerns,
+documenting your steps.
 
 \section*{Checking the Correctness of Your Program and Writing}
 
@@ -315,9 +314,16 @@ to submit, using GitHub, the following deliverables.
   \testprogramsource{} that contains at least five passing tests and produces
   the desired diagnostic output.
 
-\item Stored in a Markdown file called \reflection{}, a six-paragraph response,
+\item A revised version of \mainprogramsource{} that, when appropriate, contains
+  refactored source code that avoids the ``red flags'' mentioned in \philosophy.
+  While you should try to further improve this program, you do not need to
+  refactor it to overcome the limitations that prevent the use of parameterized
+  test cases in Pytest.
+
+\item Stored in a Markdown file called \reflection{}, a five-paragraph response,
   with each paragraph consisting of at least 100 words, for each of the stated
-  prompts.
+  prompts. This file should also feature fenced code blocks that furnish source
+  code and output from running a test suite.
 
 \end{enumerate}
 
@@ -332,14 +338,14 @@ However, you will fail the assignment if you do not complete it correctly, as
 evidenced by a red \naughtmark{} in your commit listing, by the set deadline for
 completing the project.
 
-In adherence to the Honor Code, students should complete this assignment on an
-individual basis. While it is appropriate for students in this class to have
-high-level conversations about the assignment, it is necessary to distinguish
-carefully between the student who discusses the principles underlying a problem
-with others and the student who produces assignments that are identical to, or
-merely variations on, someone else's work. Deliverables (e.g., Python source
-code) that are nearly identical to the work of others will be taken as evidence
-of violating the \mbox{Honor Code}. Please see the course instructor during
-office hours if you have questions about the Honor Code policy.
+% In adherence to the Honor Code, students should complete this assignment on an
+% individual basis. While it is appropriate for students in this class to have
+% high-level conversations about the assignment, it is necessary to distinguish
+% carefully between the student who discusses the principles underlying a problem
+% with others and the student who produces assignments that are identical to, or
+% merely variations on, someone else's work. Deliverables (e.g., Python source
+% code) that are nearly identical to the work of others will be taken as evidence
+% of violating the \mbox{Honor Code}. Please see the course instructor during
+% office hours if you have questions about the Honor Code policy.
 
 \end{document}
