@@ -218,8 +218,8 @@ understand this tool's command-line arguments.
 Please make sure that you carefully review the listing of ``red flags'' in the
 appendix of \philosophy.
 %
-You are also expected to find and read all of the online resources
-that you need to complete this assignment.
+You are also expected to find and read all of the online resources that you need
+to complete this assignment.
 
 \section*{Discovering the Limitations Imposed by the Cookbook Style}
 
@@ -237,10 +237,11 @@ like
 ``Allegheny-Computer-Science-203-Spring-2019/computer-science-203-spring-2019-practical-4-gkapfham''.
 Unless you provide the instructor with documentation of the extenuating
 circumstances that you are facing, not accepting the assignment means that you
-automatically receive a failing grade for it. Now, remember that your home base
-for this assignment is the directory that contains all of the configuration
-files and the \command{termfrequency/} directory. Can you find the program and
-its tests?
+automatically receive a failing grade for it.
+
+% Now, remember that your home base for this assignment is the directory that
+% contains all of the configuration files and the \command{termfrequency/}
+% directory. Can you find the program and its tests?
 
 Study the provided source code and the technical documentation to understand the
 type of output that your program produces.
@@ -253,16 +254,23 @@ that you previously developed for this program.
 If you have already installed Pipenv and the project's development dependencies,
 you can run the tests by typing \command{pipenv run pytest}.
 %
-% Next, you should follow the instructions in the \program{README} file to run the
-% test suite while perform ``code coverage analysis'', thereby tracking how the
-% tests exercise the program.
-%
 After that, please try to use Pytest plugins like \program{pytest-clarity} and
 \program{pytest-sugar} and observing how they help you to be a better tester.
 %
 Finally, review the ``red flags'' associated with poor software designs and try
-to take steps to refactor the Python program and tests to avoid those concerns,
-documenting your steps.
+to take steps to refactor the Python program and tests --- while preserving the
+style --- to avoid those concerns, documenting your steps.
+%
+Instead of fully repairing the provided program, the point of this assignment is
+to develop your awareness of red flags and to address those problems that you
+can (e.g., problems with source code documentation) without stepping outside of
+the program style.
+%
+In follow-on assignments you will learn more about how to overcome the
+deficiencies inherent in this style.
+%
+For instance, parameterized unit testing is more feasible if functions accept
+parameters.
 
 \section*{Checking the Correctness of Your Program and Writing}
 
@@ -278,9 +286,11 @@ assignment's requirements, you should transfer your files to GitHub using the
 the \testprogramsource{} file has been changed and is ready for transfer to
 GitHub you would first type \gitcommittestprogram{} in your terminal, followed
 by typing \gitpush{} and checking to see that the transfer to GitHub is
-successful. If you notice that transferring your Python source code to GitHub
-did not work correctly, then please try to determine why, asking a teaching
-assistant or the course instructor for assistance, if necessary.
+successful.
+
+% If you notice that transferring your Python source code to GitHub
+% did not work correctly, then please try to determine why, asking a teaching
+% assistant or the course instructor for assistance, if necessary.
 
 After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
@@ -327,9 +337,10 @@ to submit, using GitHub, the following deliverables.
 
 \end{enumerate}
 
-\vspace*{-.5em}
+\vspace*{-1em}
 
 \section*{Evaluation of Your Practical Assignment}
+
 
 Practical assignments are graded on a completion --- or ``checkmark'' --- basis. If
 your GitHub repository has a \checkmark{} for the last commit before the
