@@ -4,8 +4,8 @@
 
 % Edit these commands for each assignment
 
-\newcommand{\assignmentduedate}{February 18}
-\newcommand{\assignmentassignedate}{February 15}
+\newcommand{\assignmentduedate}{March 11}
+\newcommand{\assignmentassignedate}{March 8}
 \newcommand{\assignmentnumber}{Five}
 
 \newcommand{\labyear}{2019}
@@ -241,10 +241,33 @@ automatically receive a failing grade for it.
 Study the provided source code and the technical documentation to understand the
 type of output that your program produces.
 %
-As you are adding all of the required code, you should also run the Pytest test
-suite that currently contains two test. Following the strategy of this test and
-the documentation for the functions in the program, add all of the test cases
-that you previously developed for this program.
+Make sure that you notice that this source code is incorrectly formatted and
+written in a fashion that uses deprecated features of the Python programming
+language.
+%
+Part of your job for this assignment is to completely refactor the source code
+so that it meets all of the well-established standards for Python programs.
+%
+As you are improving all of the provided code, you should also run the Pytest
+test suite that currently contains two test. Following the strategy of these
+tests and the documentation for the functions in the program, add all of the
+test cases that you would need to achieve high coverage of the program under
+test.
+%
+You should also write parameterized Pytest test cases that exercise the
+functions in this Pipeline-style program with numerous inputs. To implement a
+parameterized test case, you must decorate a Python testing function with the
+\command{@pytest.mark.parametrize} annotation. How do you think that
+parameterized testing makes it easier to better achieve a confidence in the
+correctness of the program under test? What are the limitations of parameterized
+testing?
+%
+Although you are not required to write all of your tests in a parameterized
+fashion, at least some of the new tests that you write must adopt this approach.
+%
+Please see the course instructor if you have questions about either how to
+refactor the program's source code to meet the established or how to write and
+run parameterized tests.
 
 %%
 %If you have already installed Pipenv and the project's development dependencies,
@@ -318,13 +341,13 @@ to submit, using GitHub, the following deliverables.
 
 \item A properly documented, well-formatted, and correct version of
   \testprogramsource{} that contains at least five passing tests and produces
-  the desired diagnostic output.
+  the desired diagnostic output. Make sure that some of the tests adhere to the
+  parameterized testing approach supported by Pytest.
 
 \item A revised version of \mainprogramsource{} that, when appropriate, contains
-  refactored source code that avoids the ``red flags'' mentioned in \philosophy.
-  While you should try to further improve this program, you do not need to
-  refactor it to overcome the limitations that prevent the use of parameterized
-  test cases in Pytest.
+  refactored source code that avoids all of the deprecated features of the
+  Python programming language and is in adherence with the established standard
+  for writing Python source code.
 
 \item Stored in a Markdown file called \reflection{}, a five-paragraph response,
   with each paragraph consisting of at least 100 words, for each of the stated
@@ -342,7 +365,7 @@ If your GitHub repository has a \checkmark{} for the last commit before the
 deadline then you will receive the highest possible grade for the assignment.
 However, you will fail the assignment if you do not complete it correctly, as
 evidenced by a red \naughtmark{} in your commit listing, by the set deadline for
-completing the project.
+finishing the project.
 
 % In adherence to the Honor Code, students should complete this assignment on an
 % individual basis. While it is appropriate for students in this class to have
