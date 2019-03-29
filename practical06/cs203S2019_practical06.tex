@@ -4,9 +4,9 @@
 
 % Edit these commands for each assignment
 
-\newcommand{\assignmentduedate}{March 11}
-\newcommand{\assignmentassignedate}{March 8}
-\newcommand{\assignmentnumber}{Five}
+\newcommand{\assignmentduedate}{April 1}
+\newcommand{\assignmentassignedate}{March 29}
+\newcommand{\assignmentnumber}{Six}
 
 \newcommand{\labyear}{2019}
 \newcommand{\labdueday}{Monday}
@@ -18,11 +18,11 @@
 
 % Edit these commands to give the name to the main program
 
-\newcommand{\mainprogram}{\lstinline{compute_tf_pipline.py}}
-\newcommand{\mainprogramsource}{\lstinline{termfrequency/compute_tf_pipline.py}}
+\newcommand{\mainprogram}{\lstinline{compute_tf_objectoriented.py}}
+\newcommand{\mainprogramsource}{\lstinline{termfrequency/compute_tf_objectoriented.py}}
 
-\newcommand{\testprogram}{\lstinline{test_compute_tf_pipline.py}}
-\newcommand{\testprogramsource}{\lstinline{tests/test_compute_tf_pipline.py}}
+\newcommand{\testprogram}{\lstinline{test_compute_tf_objectoriented.py}}
+\newcommand{\testprogramsource}{\lstinline{tests/test_compute_tf_objectoriented.py}}
 
 % Edit this commands to describe key deliverables
 
@@ -50,8 +50,8 @@
 \newcommand{\gitpush}{\command{git push}}
 \newcommand{\gitpull}{\command{git pull}}
 
-\newcommand{\gitcommitmainprogram}{\command{git commit termfrequency/compute_tf_pipline.py -m "Descriptive commit message"}}
-\newcommand{\gitcommittestprogram}{\command{git commit tests/test_compute_tf_pipline.py -m "Descriptive commit message"}}
+\newcommand{\gitcommitmainprogram}{\command{git commit termfrequency/compute_tf_objectoriented.py -m "Descriptive commit message"}}
+\newcommand{\gitcommittestprogram}{\command{git commit tests/test_compute_tf_objectoriented.py -m "Descriptive commit message"}}
 
 % Commands for the textbooks, since there are so many
 
@@ -126,10 +126,12 @@ will also continue to practice using Slack to support communication with the
 teaching assistants and the course instructor. You will carry on with practice
 in implementing and running a Python program and also using Pipenv and the
 course's automated grading tool to assess your progress towards correctly
-completing the project. Along with practicing how to use Pytest plugins, will
-refactor the source code of a Python program implemented in the pipeline style
-and then use parameterized testing to establish a confidence in the program's
-correctness.
+completing the project. Along with practicing how to use Pytest plugins, you
+will refactor the source code of a Python program implemented in the
+object-oriented style and then use parameterized testing to establish a
+confidence in the program's correctness. You will also further practice the
+refactoring of a Python program that does not meet certain design and
+implementation standards.
 
 \section*{Suggestions for Success}
 
@@ -208,10 +210,10 @@ many of the features that GitHub provides. In particular, please make sure that
 you have read guides such as ``Mastering Markdown'' and ``Documenting Your
 Projects on GitHub''; each of them will help you to understand how to use both
 GitHub and GitHub Classroom. To do well on this assignment, you should also read
-Chapters 1 through 5 in {\em Think Python\/} and the Preface and Chapters 1
-through 5 in the {\em Exercises in Programming Style\/}.
+Chapters 1 through 5 in {\em Think Python\/} and the Preface and Chapters 10
+through 15 in the {\em Exercises in Programming Style\/}.
 %
-You should also read the first two chapters in the \pytest, making sure that you
+You should also read the first four chapters in \pytest, making sure that you
 understand parameterized testing.
 %
 Please make sure that you review the relevant content in \cooperative~and
@@ -220,7 +222,7 @@ Please make sure that you review the relevant content in \cooperative~and
 You are also expected to find and read all of the online resources that you need
 to complete this assignment.
 
-\section*{Refactoring and Testing a Pipeline-Style Program}
+\section*{Refactoring and Testing an Object-Oriented Python Program}
 
 To access the practical assignment, you should go into the
 \channel{\#announcements} channel in our Slack team and find the announcement
@@ -233,7 +235,7 @@ to access your new GitHub repository for this assignment, please click the green
 assignment has been created here''. If you accepted the assignment and correctly
 followed these steps, you should have created a GitHub repository with a name
 like
-``Allegheny-Computer-Science-203-Spring-2019/computer-science-203-spring-2019-practical-5-gkapfham''.
+``Allegheny-Computer-Science-203-Spring-2019/computer-science-203-spring-2019-practical-6-gkapfham''.
 Unless you provide the instructor with documentation of the extenuating
 circumstances that you are facing, not accepting the assignment means that you
 automatically receive a failing grade for it.
@@ -242,54 +244,34 @@ Study the provided source code and the technical documentation to understand the
 type of output that your program produces.
 %
 Make sure that you notice that this source code is incorrectly formatted and
-written in a fashion that uses deprecated features of the Python programming
+written in a fashion that uses non-standard features of the Python programming
 language.
 %
-Part of your job for this assignment is to completely refactor the source code
-so that it meets all of the well-established standards for Python programs.
+Part of your job for this assignment is to refactor the source code so that it
+meets all of the well-established standards for Python programs.
 %
 As you are improving all of the provided code, you should also run the Pytest
-test suite that currently contains two test. Following the strategy of these
+test suite that currently contains one test. Following the strategy of these
 tests and the documentation for the functions in the program, add all of the
 test cases that you would need to achieve high coverage of the program under
 test.
 %
 You should also write parameterized Pytest test cases that exercise the
-functions in this Pipeline-style program with numerous inputs. To implement a
-parameterized test case, you must decorate a Python testing function with the
-\command{@pytest.mark.parametrize} annotation. How do you think that
-parameterized testing makes it easier to better achieve a confidence in the
-correctness of the program under test? What are the limitations of parameterized
-testing?
+functions in this object-oriented-style program with numerous inputs. To
+implement a parameterized test case, you must decorate a Python testing function
+with the \command{@pytest.mark.parametrize} annotation.
 %
 Although you are not required to write all of your tests in a parameterized
 fashion, at least some of the new tests that you write must adopt this approach.
 %
-Please see the course instructor if you have questions about either how to
-refactor the program's source code to meet the established or how to write and
-run parameterized tests.
-
-%%
-%If you have already installed Pipenv and the project's development dependencies,
-%you can run the tests by typing \command{pipenv run pytest}.
-%%
-%After that, please try to use Pytest plugins like \program{pytest-clarity} and
-%\program{pytest-sugar} and observing how they help you to be a better tester.
-%%
-%Finally, review the ``red flags'' associated with poor software designs and try
-%to take steps to refactor the Python program and tests --- while preserving the
-%style --- to avoid those concerns, documenting your steps.
-%%
-%Instead of fully repairing the provided program, the point of this assignment is
-%to develop your awareness of red flags and to address those problems that you
-%can (e.g., problems with source code documentation) without stepping outside of
-%the program style.
-%%
-%In follow-on assignments you will learn more about how to overcome the
-%deficiencies inherent in this style.
-%%
-%For instance, parameterized unit testing is more feasible if functions accept
-%parameters.
+Finally, please compare and contrast the pipeline version of this program to
+this one that is written in an object-oriented fashion. What are the
+similarities and differences? Which one do you prefer? Which one is easier to
+test?
+%
+Please see the instructor if you have questions about how to refactor the
+program's source code to meet established requirements, how to write and run
+parameterized tests, or why the object-oriented system is design in this way.
 
 \section*{Checking the Correctness of Your Program and Writing}
 
@@ -306,10 +288,6 @@ the \testprogramsource{} file has been changed and is ready for transfer to
 GitHub you would first type \gitcommittestprogram{} in your terminal, followed
 by typing \gitpush{} and checking to see that the transfer to GitHub is
 successful.
-
-% If you notice that transferring your Python source code to GitHub
-% did not work correctly, then please try to determine why, asking a teaching
-% assistant or the course instructor for assistance, if necessary.
 
 After the course instructor enables \step{continuous integration} with a system
 called Travis CI, when you use the \gitpush{} command to transfer your source
