@@ -131,7 +131,9 @@ will refactor the source code of a Python program implemented in the
 object-oriented style and then use parameterized testing to establish a
 confidence in the program's correctness. You will also further practice the
 refactoring of a Python program that does not meet certain design and
-implementation standards.
+implementation standards. Finally, you will compare and contrast the past four
+programming styles, identifying your preferences and the trade-offs inherent in
+each style.
 
 \section*{Suggestions for Success}
 
@@ -168,10 +170,10 @@ implementation standards.
   using the provided checking tools on your local computer and in checking the
   commits in GitHub.
 
-\item {\bf Keep all of your files}. Don't delete your programs, output files,
-  and written reports after you submit them through GitHub; you will need them
-  again when you study for the quizzes and examinations and work on the other
-  laboratory, practical, and final project assignments.
+% \item {\bf Keep all of your files}. Don't delete your programs, output files,
+%   and written reports after you submit them through GitHub; you will need them
+%   again when you study for the quizzes and examinations and work on the other
+%   laboratory, practical, and final project assignments.
 
 \item {\bf Back up your files regularly}. All of your files are regularly
   backed-up to the servers in the Department of Computer Science and, if you
@@ -196,9 +198,9 @@ implementation standards.
   collaborate with their team members and the tutors, teaching assistants, and
   course instructor.
 
-\item {\bf Review the Honor Code on the syllabus}. While you may discuss your
-  assignments with others, copying source code or writing is a violation of
-  Allegheny College's Honor Code.
+% \item {\bf Review the Honor Code on the syllabus}. While you may discuss your
+%   assignments with others, copying source code or writing is a violation of
+%   Allegheny College's Honor Code.
 
 \end{itemize}
 
@@ -251,10 +253,9 @@ Part of your job for this assignment is to refactor the source code so that it
 meets all of the well-established standards for Python programs.
 %
 As you are improving all of the provided code, you should also run the Pytest
-test suite that currently contains one test. Following the strategy of these
-tests and the documentation for the functions in the program, add all of the
-test cases that you would need to achieve high coverage of the program under
-test.
+test suite that currently contains one test. Following the strategy of this test
+and the documentation for the functions in the program, add all of the test
+cases that you would need to achieve high coverage of the program under test.
 %
 You should also write parameterized Pytest test cases that exercise the
 functions in this object-oriented-style program with numerous inputs. To
@@ -264,14 +265,14 @@ with the \command{@pytest.mark.parametrize} annotation.
 Although you are not required to write all of your tests in a parameterized
 fashion, at least some of the new tests that you write must adopt this approach.
 %
-Finally, please compare and contrast the pipeline version of this program to
-this one that is written in an object-oriented fashion. What are the
+Finally, please compare and contrast the cookbook and pipeline versions of this
+program to this one that is written in an object-oriented fashion. What are the
 similarities and differences? Which one do you prefer? Which one is easier to
 test?
 %
 Please see the instructor if you have questions about how to refactor the
-program's source code to meet established requirements, how to write and run
-parameterized tests, or why the object-oriented system is design in this way.
+program's source code to meet set requirements, how to write and run
+parameterized tests, or why the object-oriented system is designed in this way.
 
 \section*{Checking the Correctness of Your Program and Writing}
 
@@ -317,17 +318,17 @@ to submit, using GitHub, the following deliverables.
 
 \setlength{\itemsep}{0in}
 
-\item A properly documented, well-formatted, and correct version of
-  \testprogramsource{} that contains at least five passing tests and produces
-  the desired diagnostic output. Make sure that some of the tests adhere to the
-  parameterized testing approach supported by Pytest.
+\item A documented, well-formated, and correct version of \testprogramsource{}
+  that contains at least five passing tests and produces the desired output.
+  Make sure that some of the tests adhere to the parameterized testing approach
+  supported by Pytest.
 
 \item A revised version of \mainprogramsource{} that, when appropriate, contains
   refactored source code that avoids all of the deprecated features of the
-  Python programming language and is in adherence with the established standard
-  for writing Python source code.
+  Python language and is in adherence with the established standard for writing
+  Python code.
 
-\item Stored in a Markdown file called \reflection{}, a five-paragraph response,
+\item Stored in a Markdown file called \reflection{}, a six-paragraph response,
   with each paragraph consisting of at least 100 words, for each of the stated
   prompts. This file should also feature fenced code blocks that furnish source
   code and output from running a test suite.
