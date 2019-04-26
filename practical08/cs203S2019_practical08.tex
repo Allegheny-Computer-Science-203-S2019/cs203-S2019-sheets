@@ -124,16 +124,14 @@
 
 To practice using GitHub to access the files for a practical assignment.
 Additionally, to practice using the Ubuntu operating system and software
-development programs such as a ``terminal window'' and a ``testing tool''. You
-will also continue to practice using Slack to support communication with the
+development programs such as a ``terminal window'' and a ``plugin compiler''.
+You will continue to practice using Slack to support communication with the
 teaching assistants and the course instructor. You will carry on with practice
 in implementing and running a Python program and also using Pipenv and the
 course's automated grading tool to assess your progress towards correctly
 completing the project. You will refactor the source code of a Python program
-implemented in the aspect-oriented style and observe how the plugins enable you
-to collect a performance profile for the program. You will also further practice
-the refactoring of a Python program that does not meet certain design and
-implementation standards.
+implemented in the plugin-oriented style and observe how the plugins enable you
+to dynamically change the program's behavior through a configuration file.
 
 \section*{Suggestions for Success}
 
@@ -213,18 +211,16 @@ you have read guides such as ``Mastering Markdown'' and ``Documenting Your
 Projects on GitHub''; each of them will help you to understand how to use both
 GitHub and GitHub Classroom. To do well on this assignment, you should also read
 all relevant chapters in {\em Think Python\/} and the Preface and Chapters 16
-through 19 in the {\em Exercises in Programming Style\/}.
+through 19 in the {\em Exercises in Programming Style\/}, focusing on the
+content about the plugin style.
 %
-You should also read the first five chapters in \pytest, making sure that you
-understand parameterized testing.
-%
-Please make sure that you review the relevant content in \cooperative~and
+Make sure that you review the relevant content in \cooperative~and
 \philosophy.
 %
 You are also expected to find and read all of the online resources that you need
 to complete this assignment.
 
-\section*{Preparing and Running a Plugin-Based Python Program}
+\section*{Creating and Running a Plugin-Based Python Program}
 
 To access the practical assignment, you should go into the
 \channel{\#announcements} channel in our Slack team and find the announcement
@@ -242,28 +238,51 @@ Unless you provide the instructor with documentation of the extenuating
 circumstances that you are facing, not accepting the assignment means that you
 automatically receive a failing grade for it.
 
+
+%%
+%Make sure that you notice that this source code is incorrectly formatted and
+%written in a fashion that uses non-standard features of the Python programming
+%language.
+%%
+%Part of your job for this assignment is to refactor the source code so that it
+%meets all of the well-established standards for Python programs.
+%%
+
 Study the provided source code and the technical documentation to understand the
 type of output that your program produces.
 %
-Make sure that you notice that this source code is incorrectly formatted and
-written in a fashion that uses non-standard features of the Python programming
-language.
+As you are working to understand all of the provided code, you should review the
+notes and markers in it so that you can enhance a Python program and a shell
+script in the correct fashion.
 %
-Part of your job for this assignment is to refactor the source code so that it
-meets all of the well-established standards for Python programs.
-%
-As you are improving all of the provided code, you should also run the Pytest
-test suite that currently contains one test. Following the strategy of this test
-and the documentation for the functions in the program, add all of the test
-cases that you would need to achieve high coverage of the program under test.
-%
-If appropriate, you can also write parameterized Pytest test cases that exercise
-the functions in this aspect-oriented-style program with numerous inputs.
-%
-Next, you should notice that this Python program contains ``plugins'' that are
+Make sure that you notice that this Python program contains ``plugins'' that are
 ``installed'' into the main program. What are the benefits associated with using
-the aspect-oriented style to insert the profiling statements into the program?
+the plugin style to dynamically install functionality into the program?
 %
+Don't forget that, before you can run this program, you must compile and install
+the four plugins on which it relies, following the completed source code after
+this paragraph that must run from a provided shell script.
+
+\begin{verbatim}
+python3 -m compileall .
+mkdir -p ../plugins
+cp __pycache__/*.pyc ../plugins
+mv ../plugins/frequencies1.cpython-36.pyc ../plugins/frequencies1.pyc
+mv ../plugins/frequencies2.cpython-36.pyc ../plugins/frequencies2.pyc
+mv ../plugins/words1.cpython-36.pyc ../plugins/words1.pyc
+mv ../plugins/words2.cpython-36.pyc ../plugins/words2.pyc
+\end{verbatim}
+
+Once you have correctly installed and configured the plugins through the
+\program{config.ini} file, you should try to run the program in all four of its
+possible configurations. Does it work correctly? Make sure that you understand
+how the Python program finds and invokes its plugins. Students are encouraged to
+draw a technical diagram showing how each step of the plugin style works.
+%
+You should also ensure that you understand why it is necessary to run each of
+the steps in the script before running \mainprogramsource{} with
+\command{pipenv} and \command{python3}. Don't forget that if you modify a
+plugin's code you must re-compile and re-install it before running the program!
 
 \section*{Checking the Correctness of Your Program and Writing}
 
@@ -308,11 +327,6 @@ to submit, using GitHub, the following deliverables.
 \begin{enumerate}
 
 \setlength{\itemsep}{0in}
-
-\item A documented, well-formated, and correct version of \testprogramsource{}
-  that contains at least five passing tests and produces the desired output.
-  Make sure that some of the tests adhere to the parameterized testing approach
-  supported by Pytest.
 
 \item Revised versions of \mainprogramsource{} and \secondprogramsource{} that,
   when appropriate, contains refactored and improved source code.
