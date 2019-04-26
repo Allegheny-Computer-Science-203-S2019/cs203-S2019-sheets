@@ -4,9 +4,9 @@
 
 % Edit these commands for each assignment
 
-\newcommand{\assignmentduedate}{April 15}
-\newcommand{\assignmentassignedate}{April 12}
-\newcommand{\assignmentnumber}{Seven}
+\newcommand{\assignmentduedate}{April 29}
+\newcommand{\assignmentassignedate}{April 26}
+\newcommand{\assignmentnumber}{Eight}
 
 \newcommand{\labyear}{2019}
 \newcommand{\labdueday}{Monday}
@@ -18,11 +18,14 @@
 
 % Edit these commands to give the name to the main program
 
-\newcommand{\mainprogram}{\lstinline{compute_tf_aspects.py}}
-\newcommand{\mainprogramsource}{\lstinline{termfrequency/compute_tf_aspects.py}}
+\newcommand{\mainprogram}{\lstinline{compute_tf_plugins.py}}
+\newcommand{\mainprogramsource}{\lstinline{termfrequency/compute_tf_plugins.py}}
 
-\newcommand{\testprogram}{\lstinline{test_compute_tf_aspects.py}}
-\newcommand{\testprogramsource}{\lstinline{tests/test_compute_tf_aspects.py}}
+\newcommand{\secondprogram}{\lstinline{plugins-compile-and-install.sh}}
+\newcommand{\secondprogramsource}{\lstinline{plugins-src/plugins-compile-and-install.sh}}
+
+\newcommand{\testprogram}{\lstinline{test_compute_tf_plugins.py}}
+\newcommand{\testprogramsource}{\lstinline{tests/test_compute_tf_plugins.py}}
 
 % Edit this commands to describe key deliverables
 
@@ -50,8 +53,8 @@
 \newcommand{\gitpush}{\command{git push}}
 \newcommand{\gitpull}{\command{git pull}}
 
-\newcommand{\gitcommitmainprogram}{\command{git commit termfrequency/compute_tf_aspects.py -m "Descriptive commit message"}}
-\newcommand{\gitcommittestprogram}{\command{git commit tests/test_compute_tf_aspects.py -m "Descriptive commit message"}}
+\newcommand{\gitcommitmainprogram}{\command{git commit termfrequency/compute_tf_plugins.py -m "Descriptive commit message"}}
+\newcommand{\gitcommittestprogram}{\command{git commit tests/test_compute_tf_plugins.py -m "Descriptive commit message"}}
 
 % Commands for the textbooks, since there are so many
 
@@ -127,7 +130,7 @@ teaching assistants and the course instructor. You will carry on with practice
 in implementing and running a Python program and also using Pipenv and the
 course's automated grading tool to assess your progress towards correctly
 completing the project. You will refactor the source code of a Python program
-implemented in the aspect-oriented style and observe how the aspects enable you
+implemented in the aspect-oriented style and observe how the plugins enable you
 to collect a performance profile for the program. You will also further practice
 the refactoring of a Python program that does not meet certain design and
 implementation standards.
@@ -180,7 +183,7 @@ implementation standards.
   you are responsible for ensuring that you have access to a recent backup copy
   of all your files.
 
-\item {\bf Explore teamwork and technologies}. While certain aspects of these
+\item {\bf Explore teamwork and technologies}. While certain plugins of these
   assignments will be challenging for you, each part is designed to give you the
   opportunity to learn both fundamental concepts in the field of computer
   science and explore advanced technologies that are commonly employed at a wide
@@ -221,7 +224,7 @@ Please make sure that you review the relevant content in \cooperative~and
 You are also expected to find and read all of the online resources that you need
 to complete this assignment.
 
-\section*{Refactoring and Testing an Aspect-Oriented Python Program}
+\section*{Preparing and Running a Plugin-Based Python Program}
 
 To access the practical assignment, you should go into the
 \channel{\#announcements} channel in our Slack team and find the announcement
@@ -234,7 +237,7 @@ to access your new GitHub repository for this assignment, please click the green
 assignment has been created here''. If you accepted the assignment and correctly
 followed these steps, you should have created a GitHub repository with a name
 like
-``Allegheny-Computer-Science-203-Spring-2019/computer-science-203-spring-2019-practical-7-gkapfham''.
+``Allegheny-Computer-Science-203-Spring-2019/computer-science-203-spring-2019-practical-8-gkapfham''.
 Unless you provide the instructor with documentation of the extenuating
 circumstances that you are facing, not accepting the assignment means that you
 automatically receive a failing grade for it.
@@ -257,17 +260,10 @@ cases that you would need to achieve high coverage of the program under test.
 If appropriate, you can also write parameterized Pytest test cases that exercise
 the functions in this aspect-oriented-style program with numerous inputs.
 %
-Next, you should notice that this Python program contains ``aspects'' that are
-``woven'' into certain functions. These aspects introduce profiling statements
-that help you to time the execution of the program. Now, try to answer the
-following questions. Which functions in this programm take the most time to
-execute? How does the execution time of a function vary depending on the
-provided input? What are the benefits associated with using the aspect-oriented
-style to insert the profiling statements into the program?
+Next, you should notice that this Python program contains ``plugins'' that are
+``installed'' into the main program. What are the benefits associated with using
+the aspect-oriented style to insert the profiling statements into the program?
 %
-Please see the instructor if you have questions about how to refactor the
-program's source code to meet the established requirements, how to write and run
-the Pytest tests, or why the aspect-oriented system is designed in this way.
 
 \section*{Checking the Correctness of Your Program and Writing}
 
@@ -318,13 +314,11 @@ to submit, using GitHub, the following deliverables.
   Make sure that some of the tests adhere to the parameterized testing approach
   supported by Pytest.
 
-\item A revised version of \mainprogramsource{} that, when appropriate, contains
-  refactored source code that avoids all of the deprecated features of the
-  Python language and is in adherence with the established standard for writing
-  Python code.
+\item Revised versions of \mainprogramsource{} and \secondprogramsource{} that,
+  when appropriate, contains refactored and improved source code.
 
-\item Stored in a Markdown file called \reflection{}, a five-paragraph response,
-  with each paragraph consisting of at least 100 words, for each of the stated
+\item Stored in a Markdown file called \reflection{}, a three-paragraph response,
+  with each paragraph consisting of at least 50 words, for each of the stated
   prompts. This file should also feature fenced code blocks that furnish source
   code and output from running a test suite.
 
