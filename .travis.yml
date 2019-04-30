@@ -17,6 +17,7 @@ script:
 - latexmk -pdf -outdir=_build practical08/cs203S2019_practical08.tex
 - latexmk -pdf -outdir=_build exam1/cs203S2019_studyguide_exam01.tex
 - latexmk -pdf -outdir=_build exam2/cs203S2019_studyguide_exam02.tex
+- latexmk -pdf -outdir=_build exam3/cs203S2019_studyguide_exam03.tex
 deploy:
   provider: releases
   api_key:
@@ -34,6 +35,7 @@ deploy:
     - _build/cs203S2019_practical08.pdf
     - _build/cs203S2019_studyguide_exam01.pdf
     - _build/cs203S2019_studyguide_exam02.pdf
+    - _build/cs203S2019_studyguide_exam03.pdf
   skip_cleanup: true
   on:
     tags: true
